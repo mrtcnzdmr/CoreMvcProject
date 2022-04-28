@@ -1,0 +1,31 @@
+﻿@using CoreMvcProject.Models
+@model List<Personal>
+@{
+    ViewData["Title"] = "UnitDetail";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+
+<br />
+<h2>@ViewBag.unname Departmanı</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Personel Id</th>
+        <th>Personel Ad</th>
+        <th>Personel Soyad</th>
+        <th>Personel Şehir</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonalId</td>
+            <td>@item.PersonalFirstName</td>
+            <td>@item.PersonalLastName</td>
+            <td>@item.PersonalCity</td>
+        </tr>
+    }
+</table>
+

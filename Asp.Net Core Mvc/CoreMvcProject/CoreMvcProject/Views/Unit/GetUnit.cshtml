@@ -1,0 +1,17 @@
+﻿@model CoreMvcProject.Models.Unit
+@{
+    ViewData["Title"] = "GetUnit";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("UpdateUnit", "Unit", FormMethod.Post))
+{
+    <b>Birim Id</b>
+    @Html.TextBoxFor(x => x.UnitId, new { @class = "form-control" })
+    <br />
+    <b>Birim Ad</b>
+    @Html.TextBoxFor(x => x.UnitName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Birim Güncelle</button>
+}

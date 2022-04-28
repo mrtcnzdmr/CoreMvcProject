@@ -1,0 +1,32 @@
+﻿@using CoreMvcProject.Models
+@model List<Personal>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Personel Id</th>
+        <th>Personel Ad</th>
+        <th>Personel Soyad</th>
+        <th>Personel Şehir</th>
+        <th>Personel Birim</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonalId</td>
+            <td>@item.PersonalFirstName</td>
+            <td>@item.PersonalLastName</td>
+            <td>@item.PersonalCity</td>
+            <td>@item.Unit.UnitName</td>
+            <td><a href="/MyPersonal/RemovePersonal/@item.PersonalId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/MyPersonal/PersonalGetir/@item.PersonalId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/MyPersonal/NewPersonal/" class="btn btn-primary">Yeni Personel Ekle</a>
+

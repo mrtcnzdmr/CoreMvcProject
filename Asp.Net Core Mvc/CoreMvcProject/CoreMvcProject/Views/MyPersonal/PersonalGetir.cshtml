@@ -1,0 +1,26 @@
+﻿@model CoreMvcProject.Models.Personal
+@{
+    ViewData["Title"] = "PersonalGetir";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("UpdatePersonal", "MyPersonal", FormMethod.Post))
+{
+    <b>Personel Adı</b>
+    @Html.TextBoxFor(x => x.PersonalFirstName, new { @class = "form-control" })
+    <br />
+    <b>Personel Soyad</b>
+    @Html.TextBoxFor(x => x.PersonalLastName, new { @class = "form-control" })
+    <br />
+    <b>Personel Şehir</b>
+    @Html.TextBoxFor(x => x.PersonalCity, new { @class = "form-control" })
+    <br />
+    <b>Birim</b>
+    @Html.DropDownListFor(x => x.Unit.UnitId, (List<SelectListItem>)ViewBag.val, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Personel Güncelle</button>
+
+}
+
+

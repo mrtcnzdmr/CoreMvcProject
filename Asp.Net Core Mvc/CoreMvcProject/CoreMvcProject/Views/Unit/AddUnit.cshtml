@@ -1,0 +1,16 @@
+﻿@model CoreMvcProject.Models.Unit
+@{
+    ViewData["Title"] = "AddUnit";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+<form class="form-group"method="post">
+    <b>Birim Adı</b>
+    @Html.TextBoxFor(x=>x.UnitName,new { @class="form-control"})
+    <br />
+    <button class="btn btn-info">Birim Ekle</button>
+</form>
+
+
+

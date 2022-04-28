@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ders4</title>
+</head>
+<body>
+    <div style="background-color:#00ff21">
+        @DateTime.Now.ToShortDateString()
+    </div>
+    <br />
+    <div style="background-color:#00ffff">
+        @for (int i = 1; i < 10; i++)
+        {
+            @i
+            <br />
+        }
+    </div>
+    <br />
+    <div style="background-color:#0026ff">
+        @{
+            var liste = new List<string>() { "Ankara", "Bursa", "Adana", "İzmir" };
+            int sayi = 0;
+        }
+        
+        @foreach (var item in liste)
+        {
+            sayi++;
+            @sayi
+            @item
+            <br />
+        }
+
+    </div>
+</body>
+</html>
